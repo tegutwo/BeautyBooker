@@ -1,0 +1,331 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 52%; } }
+
+body {
+  font-size: 1.6rem;
+  position: relative; }
+
+.heading-primary {
+  font-size: 1.8rem;
+  line-height: 3; }
+
+.hidden {
+  display: none; }
+
+.sizedBox {
+  display: inline-block; }
+
+.booked {
+  background-color: #4848ff;
+  color: white;
+  border-radius: 50%; }
+
+.selected {
+  background-color: blue;
+  color: white;
+  border-radius: 50%; }
+
+.errors {
+  color: red;
+  padding: 1.5rem;
+  text-indent: .3rem;
+  list-style: square; }
+
+.btn,
+.btn:link,
+.btn:visited {
+  text-decoration: none; }
+
+.btn_text {
+  display: inline-block;
+  color: #004CFF;
+  margin: -1rem 0 1.5rem;
+  text-decoration: underline !important;
+  padding: 1rem; }
+
+.btn_block {
+  appearance: none;
+  display: inline-block;
+  border-radius: .5rem;
+  border: none;
+  font-size: 1.6rem;
+  padding: 1rem;
+  text-align: center;
+  background-image: linear-gradient(120deg, #A5317A, #471B43);
+  color: #f0f0f0;
+  width: 50%;
+  transition: .1s all;
+  box-shadow: 0.2rem 0.6rem 1rem rgba(0, 0, 0, 0.235); }
+  .btn_block:active {
+    box-shadow: 0.2rem 0.3rem 0.4rem rgba(0, 0, 0, 0.135);
+    transform: translateY(0.1rem); }
+  .btn_block:focus {
+    outline: none; }
+
+.calendar_pop {
+  padding: 1rem;
+  width: 3rem;
+  display: inline-block;
+  margin-top: -6.5rem;
+  z-index: 1;
+  right: 6rem;
+  position: absolute;
+  text-align: center; }
+
+#calendar {
+  margin: .2rem 0 3rem; }
+  #calendar .calendar_table {
+    border-spacing: 1rem .3rem;
+    margin-top: .5rem; }
+  #calendar .icon_calendar {
+    display: inline-block; }
+  #calendar input {
+    display: inline-block; }
+  #calendar span:first-child {
+    display: inline-block;
+    width: 100px; }
+  #calendar span:not(:first-child) {
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 2.3rem; }
+  #calendar .calendar_year {
+    font-weight: bold;
+    display: inline-block; }
+  #calendar .calendar_month {
+    display: inline-block;
+    font-size: 2rem; }
+  #calendar .monthname {
+    font-weight: bold; }
+  #calendar .calendar_cell {
+    cursor: pointer;
+    padding: .5rem;
+    text-align: center; }
+  #calendar .calendar_header {
+    color: #474747; }
+
+.navigation {
+  position: relative; }
+  .navigation_checkbox {
+    display: none; }
+  .navigation_button {
+    position: relative;
+    background-color: #fff;
+    width: 4rem;
+    height: 4rem;
+    display: inline-block;
+    border-radius: 50%;
+    z-index: 3000; }
+  .navigation_icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .navigation_icon, .navigation_icon::before, .navigation_icon::after {
+      display: inline-block;
+      width: 1.5rem;
+      height: .2rem;
+      background-color: #1f1f1f; }
+    .navigation_icon::before, .navigation_icon::after {
+      content: " ";
+      position: absolute;
+      left: 0; }
+    .navigation_icon::before {
+      top: -.5rem; }
+    .navigation_icon::after {
+      top: .5rem; }
+  .navigation_background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3rem;
+    height: 3rem;
+    background-image: radial-gradient(red, brown);
+    border-radius: 50%;
+    z-index: 500;
+    transition: transform .4s; }
+  .navigation_nav {
+    z-index: 2000;
+    opacity: 0;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    transition: all 0.7s cubic-bezier(0.17, 0.67, 0.49, 1.54); }
+  .navigation_list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    width: 100%;
+    text-align: center; }
+  .navigation_item {
+    margin-bottom: 1rem;
+    font-size: 1.9rem; }
+  .navigation_links {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    color: white;
+    transition: all .5s; }
+    .navigation_links:hover {
+      background-image: linear-gradient(120deg, transparent 0, transparent 50%, white 50%);
+      color: #111111;
+      background-size: 250%;
+      background-position-x: right; }
+  .navigation_checkbox:checked ~ .navigation_background {
+    transform: scale(100); }
+  .navigation_checkbox:checked ~ .navigation_nav {
+    width: 100%;
+    opacity: 1; }
+  .navigation_checkbox:checked ~ .navigation_button .navigation_icon {
+    width: 0; }
+  .navigation_checkbox:checked ~ .navigation_button .navigation_icon:before {
+    top: 0;
+    transform: translateX(-50%) rotate(-135deg); }
+  .navigation_checkbox:checked ~ .navigation_button .navigation_icon::after {
+    top: 0;
+    transform: translateX(-50%) rotate(135deg); }
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 100;
+  contain: layout;
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-end; }
+
+.logo {
+  display: inline-flex;
+  text-align: left;
+  justify-content: flex-start;
+  margin-right: 4rem;
+  align-items: center; }
+  .logo_image {
+    height: 4rem;
+    margin-right: .5rem; }
+  .logo_text {
+    text-indent: 1px;
+    font-size: 1.4rem; }
+
+.Details {
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem; }
+  @media (min-width: 50em) {
+    .Details {
+      flex-direction: row;
+      margin-left: 1rem; } }
+  @media (min-width: 50em) {
+    .Details > .container {
+      flex-basis: 50%;
+      width: 50%; } }
+  .Details .heading-primary {
+    align-self: flex-start; }
+  .Details .personalDetails {
+    align-self: center;
+    margin: 2rem 0; }
+    .Details .personalDetails_labels {
+      font-size: 1.2rem;
+      color: grey;
+      opacity: 0; }
+    .Details .personalDetails_input, .Details .personalDetails_input:focus {
+      display: block;
+      font-size: inherit;
+      padding: .8rem 0;
+      margin-bottom: 1rem;
+      width: 80vw;
+      max-width: 80vw;
+      text-indent: 1rem;
+      border: none;
+      border-bottom: 1px solid #353432;
+      outline: none;
+      margin-bottom: 3rem; }
+      @media (min-width: 50em) {
+        .Details .personalDetails_input, .Details .personalDetails_input:focus {
+          margin-left: 3rem;
+          width: 80%; } }
+      .Details .personalDetails_input::placeholder, .Details .personalDetails_input:focus::placeholder {
+        font-size: 1.3rem;
+        opacity: 1; }
+    .Details .personalDetails_text {
+      text-align: center; }
+  .Details .choice {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
+    .Details .choice_date {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around; }
+      .Details .choice_date input[type="radio"] {
+        display: none; }
+    .Details .choice_calendar {
+      display: block;
+      font-size: inherit;
+      padding: .8rem 0;
+      margin-bottom: 1rem;
+      width: 80vw;
+      max-width: 80vw;
+      text-indent: 1rem;
+      border: none;
+      border-bottom: 1px solid #353432;
+      outline: none;
+      margin-bottom: 3rem; }
+      @media (min-width: 50em) {
+        .Details .choice_calendar {
+          width: 90%; } }
+      .Details .choice_calendar::placeholder {
+        font-size: 1.2rem; }
+    .Details .choice_time {
+      display: inline-block;
+      padding: 1rem 1.5rem;
+      color: #707070;
+      border-radius: 1.2rem;
+      background-color: #fff;
+      box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.315); }
+      .Details .choice_time:not(:last-child) {
+        margin-right: 1rem; }
+    .Details .choice input:checked + .choice_time {
+      color: #eceaea;
+      background-color: #004CFF;
+      box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.315); }
+    .Details .choice_hair {
+      max-width: 100rem;
+      clear: both;
+      margin-bottom: 2rem;
+      font-size: 1.3rem; }
+      @media (min-width: 75em) {
+        .Details .choice_hair {
+          width: 90%; } }
+    .Details .choice .input_hair {
+      display: none; }
+    .Details .choice .input_hair:checked + .label_hair {
+      color: #eceaea;
+      background-color: #004CFF;
+      box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.315); }
+    .Details .choice .label_hair {
+      margin: .5rem;
+      float: left;
+      padding: 1rem 1.5rem;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+      box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.315); }

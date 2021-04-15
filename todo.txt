@@ -1,0 +1,19 @@
+/* Urgent and Important (Do it immediately) */
+#TODO:#3 Validate form data jS
+#TODO:#4 Collect form data
+#TODO:#5 Create Payment page(M-pesa api)
+
+
+/*Urgent not important (Delegate) */
+
+
+/*Not Urgent but important (Do it later) */
+#TODO:#1 Fix top margin of navigation
+
+/*Not Urgent and not Important (Dont Bother)*/
+#TODO: #Fix Book button :active or visisted
+
+
+/*Done*/
+#TODO:#1 Create calendar
+#TODO:#2 link calendar to time buttons()

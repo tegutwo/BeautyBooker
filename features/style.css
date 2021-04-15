@@ -1,0 +1,22 @@
+#calendar{
+
+}
+.icon_calendar{
+    display: inline-block;
+}
+input{
+    display: inline-block;
+}
+span:first-child{
+    display: inline-block;
+    width:100px;
+}
+span:not(:first-child){
+    padding: 1rem;
+    cursor: pointer;
+}
+.calendar_cell{
+    cursor: pointer;
+    padding: .5rem;
+    text-align: center;
+}

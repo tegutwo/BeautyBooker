@@ -1,0 +1,61 @@
+.calendar_pop{
+    padding: 1rem;
+    width: 3rem;
+    display: inline-block;
+    margin-top: -6.5rem;
+    z-index: 1;
+    right: 6rem;
+    position: absolute;
+    text-align: center;
+}
+#calendar{
+    margin: .2rem 0 3rem;
+   
+
+.calendar_table{
+border-spacing: 1rem .3rem;
+ margin-top: .5rem;
+}
+.icon_calendar{
+    display: inline-block;
+}
+input{
+    display: inline-block;
+}
+span:first-child{
+    display: inline-block;
+    width:100px;
+}
+span:not(:first-child){
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 2.3rem;
+}
+.calendar_year{
+    font-weight: bold;
+    display: inline-block;
+}
+.calendar_month{
+    display: inline-block;
+    font-size: 2rem;
+}
+.monthname{
+    font-weight: bold;
+}
+.calendar_cell{
+    cursor: pointer;
+    padding: .5rem;
+    text-align: center;
+}
+.calendar_header{
+    color: rgb(71, 71, 71);
+}
+.btn{
+    &_prev{
+
+    }
+    &_next{
+
+    }
+}
+}

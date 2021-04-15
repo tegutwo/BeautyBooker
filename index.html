@@ -1,0 +1,127 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Icons/font/icon-font.css">
+    <link rel="stylesheet" type="text/css" href="public/style/style.css">
+    
+    <title>Tegutwo Culture: Booking</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="public/images/logo.png" alt="Tegutwo culture logo image" srcset="" class="logo_image">
+            <p class="logo_text">Tegutwo </br>Culture</p>
+        </div>
+        <div class="navigation">
+            <input type="checkbox" name="menu" id="menu" class="navigation_checkbox">
+            <label for="menu" class="navigation_button">
+                <span class="navigation_icon"></span>
+            </label>
+            <div class="navigation_background">
+                &nbsp;
+            </div>
+            <div class="navigation_nav">
+                <ul class="navigation_list">
+                    <li class="navigation_item"><a href="#" class="navigation_links">Home</a></li>
+                    <li class="navigation_item"><a href="#" class="navigation_links">About</a></li>
+                    <li class="navigation_item"><a href="#" class="navigation_links">Book</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <main class="main">
+        <form action="app.js" method="post" class="Details">
+            <div class="container">
+                <h2 class="heading-primary">Your Details:</h2>
+            <div class="personalDetails">
+            <label for="Name" class="personalDetails_labels">Name:</label>
+            <input type="text" name="Name" id="Name" class="personalDetails_input personalDetails_name" placeholder="Name" required invalid>
+            <label for="number" class="personalDetails_labels">Phone Number</label>
+            <input type="tel" name="number" id="number" class="personalDetails_input personalDetails_number" placeholder="Phone Number" required>
+            <label for="location" class="personalDetails_labels">Location:</label>
+            <input type="text" name="location" id="location" class="personalDetails_input personalDetails_location" placeholder="Location" required>
+            <p class="personalDetails_text">We currently only operate within Nairobi.</p>
+            </div>
+            
+        </div>
+        <div class="container">
+            <div class="choice">
+                <h2 class="heading-primary">Pick a date:</h2>
+                <div class="choice_date">
+                    <div class="container" style="position: relative;">
+                        <input type="text" name="calendar" id="calendar_input" class="choice_calendar" placeholder="Choose a date" readonly required>
+                        <label for="calendar_input" class="calendar_pop"><span class="icon-basic-calendar" style="font-size: 1.6rem;"></span></label>
+                    </div>
+                    <div id="calendar" class="hidden">
+                        <div class="sizedBox" style="width: 1rem;">&nbsp;</div><div class="calendar_month"><span class="monthName">January</span><span class="btn_prev">&blacktriangleleft;</span><span class="btn_next">&blacktriangleright;</span></div></br>
+                        <div class="sizedBox" style="width: 1.08rem;">&nbsp;</div><div class="calendar_year">2020</div>
+                        <table class="calendar_table">
+                          <thead class="calendar_header">
+                            <tr>
+                             <td class="calendar_dayOfWeek">Sun</td>
+                             <td class="calendar_dayOfWeek">Mon</td>
+                             <td class="calendar_dayOfWeek">Tue</td>
+                             <td class="calendar_dayOfWeek">Wed</td>
+                             <td class="calendar_dayOfWeek">Thur</td>
+                             <td class="calendar_dayOfWeek">Fri</td>
+                             <td class="calendar_dayOfWeek">Sat</td>  
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
+                    <div class="container">
+                    <input type="radio" name="time" id="Morning" value="Morning" checked>
+                    <label for="Morning" class="choice_time morning">Morning</label>
+                    <input type="radio" name="time" id="Afternoon" value="Afternoon">
+                    <label for="Afternoon" class="choice_time afternoon">Afternoon</label>
+                    </div>
+                </div>
+                <h2 class="heading-primary">What Hair would you like?</h2>
+                <div class="choice_hair">
+                    <input type="radio" name="hair" id="FauxLocs" class="input_hair" value="Faux Locs" checked>
+                    <label for="FauxLocs" class="label_hair">Faux Locs</label>
+                    <input type="radio" name="hair" id="BohoLocs" class="input_hair" value="Boho Locs">
+                    <label for="BohoLocs" class="label_hair">Boho Locs</label>
+                    <input type="radio" name="hair" id="MermaidLocs" class="input_hair" value="Mermaid Locs">
+                    <label for="MermaidLocs" class="label_hair">Mermaid Locs</label>
+                    <input type="radio" name="hair" id="DistressedLocs" class="input_hair" value="Distressed Locs">
+                    <label for="DistressedLocs" class="label_hair">Distressed Locs</label>
+                    <input type="radio" name="hair" id="KinkyWavy" class="input_hair" value="Kinky Wavy">
+                    <label for="KinkyWavy" class="label_hair">Kinky Wavy</label>
+                    <input type="radio" name="hair" id="GypsyGoddess" class="input_hair" value="Gypsy Goddess">
+                    <label for="GypsyGoddess" class="label_hair">Gypsy Goddess</label>
+                </div>
+                <a href="https://www.instagram.com/tegutwo_culture/" class="btn btn_text">Not sure?See all!</a>
+            </div>
+            <input type="button" value="Book" class="btn btn_block" id="submit">
+        </div>
+       
+    </form>
+    
+    </main>
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyD8SXgM6h-eBRF_EwQHVvNGohixuMAhGqA",
+    authDomain: "booking-system-de6d9.firebaseapp.com",
+    databaseURL: "https://booking-system-de6d9.firebaseio.com",
+    projectId: "booking-system-de6d9",
+    storageBucket: "booking-system-de6d9.appspot.com",
+    messagingSenderId: "1066975642179",
+    appId: "1:1066975642179:web:2e907ab3640555a9740af6",
+    measurementId: "G-TTTWFLE3GG"
+  };
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="calendar.js"></script>
+<script src="app.js"></script>
+</html>

@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calendar</title>
+</head>
+<body>
+    <div id="calendar hidden">
+      <div class="calendar_month"><span class="monthName">January</span><span class="btn_prev">&blacktriangleleft;</span><span class="btn_next">&blacktriangleright;</span></div>
+      <div class="calendar_year">2020</div>
+      <table class="calendar_table">
+        <thead class="calendar_header">
+          <tr>
+           <td class="calendar_dayOfWeek">Sun</td>
+           <td class="calendar_dayOfWeek">Mon</td>
+           <td class="calendar_dayOfWeek">Tue</td>
+           <td class="calendar_dayOfWeek">Wed</td>
+           <td class="calendar_dayOfWeek">Thur</td>
+           <td class="calendar_dayOfWeek">Fri</td>
+           <td class="calendar_dayOfWeek">Sat</td>  
+          </tr>
+        </thead>
+      </table>
+    </div>
+</body>
+</html>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyD8SXgM6h-eBRF_EwQHVvNGohixuMAhGqA",
+    authDomain: "booking-system-de6d9.firebaseapp.com",
+    databaseURL: "https://booking-system-de6d9.firebaseio.com",
+    projectId: "booking-system-de6d9",
+    storageBucket: "booking-system-de6d9.appspot.com",
+    messagingSenderId: "1066975642179",
+    appId: "1:1066975642179:web:2e907ab3640555a9740af6",
+    measurementId: "G-TTTWFLE3GG"
+  };
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="calendar.js"></script>

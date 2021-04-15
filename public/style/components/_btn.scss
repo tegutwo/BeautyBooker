@@ -1,0 +1,37 @@
+.btn,
+.btn:link,
+.btn:visited{
+    text-decoration: none;
+}
+
+.btn{
+    &_text{
+        display: inline-block;
+        color: #004CFF;
+        margin: -1rem 0 1.5rem;
+        text-decoration: underline !important;
+        padding: 1rem;
+      
+    }
+    &_block{
+        appearance: none;
+        display: inline-block;
+        border-radius: .5rem;
+        border: none;
+        font-size: 1.6rem;
+        padding: 1rem;
+        text-align: center;
+        background-image: linear-gradient(120deg, #A5317A,#471B43);
+        color: #f0f0f0;
+        width: 50%;
+        transition: .1s all;
+        box-shadow: .2rem .6rem 1rem hsla(0, 0%, 0%, 0.235);
+        &:active{
+            box-shadow: .2rem .3rem .4rem hsla(0, 0%, 0%, 0.135);
+            transform: translateY(.1rem);
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+}

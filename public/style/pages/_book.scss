@@ -1,0 +1,167 @@
+.header{
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 100;
+    contain: layout;
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.logo{
+    display: inline-flex;
+    text-align: left;
+    justify-content: flex-start;
+    margin-right: 4rem;
+    align-items: center;
+    &_image{
+    height: 4rem;
+    margin-right: .5rem;
+    }
+    &_text{
+       text-indent: 1px;
+        // text-transform: uppercase;
+        font-size: 1.4rem;
+    }
+}
+.main{
+   
+}
+.Details{
+    position: relative;
+    padding: 1rem;
+    display: flex;
+        flex-direction: column;
+        margin-left: 2rem;
+        
+        @include respond(tabletP){
+            flex-direction: row;
+            margin-left: 1rem;
+                
+        }
+        & > .container{
+            @include respond(tabletP){
+                flex-basis: 50%;
+                width: 50%;
+            }
+           
+        }
+.heading-primary{
+    align-self: flex-start;
+}
+    .personalDetails{
+        align-self: center;
+        margin: 2rem 0;
+
+        &_labels{
+            font-size: 1.2rem;
+            color: grey;
+            opacity: 0;
+        }
+        &_input,
+        &_input:focus{
+            display: block;
+            font-size: inherit;
+            padding: .8rem 0;
+            margin-bottom: 1rem;
+            width: 80vw;
+            max-width: 80vw;
+            text-indent: 1rem;
+            border: none;
+            border-bottom: 1px solid #353432;
+            outline: none;
+            margin-bottom: 3rem;
+            @include respond(tabletP){
+                margin-left: 3rem;
+                width: 80%;
+            }
+            &::placeholder{
+                font-size: 1.3rem;
+                opacity: 1;
+            }
+        }
+        
+    
+        &_text{
+            text-align: center;
+        }
+    }
+
+    .choice{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        &_date{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        input[type="radio"]{
+            display: none;
+        }
+        }
+        &_calendar{
+            display: block;
+            font-size: inherit;
+            padding: .8rem 0;
+            margin-bottom: 1rem;
+            width: 80vw;
+            max-width: 80vw;
+            text-indent: 1rem;
+            border: none;
+            border-bottom: 1px solid #353432;
+            outline: none;
+            margin-bottom: 3rem;
+            @include respond(tabletP){
+                width: 90%;
+            }
+            &::placeholder{
+                font-size: 1.2rem;
+            }
+        }
+        &_time{
+            display: inline-block;
+            padding: 1rem 1.5rem;
+            color:#707070 ;
+            border-radius: 1.2rem;
+            background-color: #fff;
+            box-shadow: 0 .3rem .3rem rgba(0, 0, 0, 0.315);
+            &:not(:last-child){
+                margin-right: 1rem;
+            }
+        }
+        input:checked + .choice_time{
+            color: rgb(236, 234, 234);
+            background-color: #004CFF;
+            box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.315);
+        }
+        //hair
+        &_hair{
+            max-width: 100rem;
+            // width: 90vw;
+            clear: both;
+            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            @include respond(tabletL){
+                width: 90%;
+            }
+        }
+        .input_hair{
+            display: none;
+        }
+        .input_hair:checked + .label_hair{
+            color: rgb(236, 234, 234);
+            background-color: #004CFF;
+            box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.315);
+        }
+        .label_hair{
+            margin:.5rem;
+            float: left;
+            padding: 1rem 1.5rem;
+            color:rgb(26, 26, 26) ;
+            background-color: #fdfdfd;
+            box-shadow: 0 .3rem .3rem rgba(0, 0, 0, 0.315);
+        }
+    }
+}
+
