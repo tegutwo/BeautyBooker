@@ -16,4 +16,18 @@
 
 /*Done*/
 #TODO:#1 Create calendar
-#TODO:#2 link calendar to time buttons()
+#TODO:#2 link calendar to time buttons();
+#TODO:#3 Add length options for hair.
+
+
+
+function checkData(){
+    //check that all input fields have been filled
+    //check that data is correct 
+    //check for length empty
+    !isEmpty(nameInput.value) && isBelowMaxLength(30,nameInput.value) && isAboveMinLength(3,nameInput.value) ?console.log("Its fine") :errors.push(nameInput);
+    !isEmpty(numberInput.value) || isBelowMaxLength(30,numberInput.value) || isAboveMinLength(3,numberInput.value) ?console.log("Its fine") :errors.push(numberInput);
+    !isEmpty(locationInput.value) || isBelowMaxLength(30,locationInput.value) || isAboveMinLength(5,locationInput.value) ?console.log("Its fine") :errors.push(locationInput);
+    !isEmpty(calendarInput.value) || isBelowMaxLength(30,calendarInput.value) || isAboveMinLength(8,calendarInput.value) ?console.log("Its fine") :errors.push(calendarInput);
+    console.log(!isEmpty(nameInput.value),isBelowMaxLength(30,nameInput.value),isAboveMinLength(3,nameInput.value));
+}

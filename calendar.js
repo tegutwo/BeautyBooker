@@ -4,7 +4,6 @@ var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturda
 var months = ['January','February','March','April','May','June','July','August','September','October',"November","December"];
 var currentCalendarMonth = date.getMonth();
 var currentYear = date.getFullYear();
-console.log(currentYear);
 
 function createCalendar(month,year){
 //Update year calendar
@@ -110,37 +109,6 @@ function prevMonth(){
     }
 }
 createCalendar(currentCalendarMonth,currentYear);
-// destroyCalendar();
-/*
-if(monthchnages to next){
-    change month in calendar +1
-    if(month >= 12){
-        changeyear
-        month = 0;
-    }
-    destroyCalendar
-    createCalendar(month,year)
-}
-if(monthchanges to previous){
-    
-    if(year == currentYear && month !== currentMonth){
-        month-=1;
-        if(month == -1) {year -=1,month=11};
-        destroyCalendar;
-        createCalendar(month,year);
-    }
-    else if( year !== currentYear) {
-        month-=1;
-        if(month == -1) {year -=1,month=11};
-        destroyCalendar;
-        createCalendar(month,year);
-    }else{
-        disable prevBtn;
-    }
-    change month in calendar -1
-     if(month!==currentMonth) {enable previous btn;}else{disable prevBtn}
-}
-*/
 
 async function formatCalendar(years,months){
   //Getting calendar cells

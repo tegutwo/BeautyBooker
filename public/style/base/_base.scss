@@ -9,10 +9,44 @@ html{
     box-sizing: border-box;
     font-size: 62.5%;
     @include respond(mobileL){
-        font-size: 52%;
+        // font-size: 52%;
     }
+    scroll-behavior: smooth;
 }
 body{
     font-size: 1.6rem;
     position: relative;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #fffaf2;
   }
+ /* footer */
+footer{
+    display: flex; 
+    padding:3rem 1.5rem;
+    background-color: #eff9ff;
+    color: #3D3D00;
+    margin-top: 3rem;
+}
+.Logo_text{
+    font-size: 2.4rem;
+}
+p.description{
+    width: 50%;
+}
+.social_links{
+    display: flex;
+    flex-wrap: nowrap;
+    color: rgb(59, 118, 255);
+    text-decoration: none;
+}
+.social_links > p{
+    word-wrap: unset;
+}
+@media  screen and (max-width:500px) {
+    footer{
+        flex-direction: column;
+    }
+  footer > .container:last-child{
+    margin-top: 2rem;
+    }
+}

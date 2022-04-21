@@ -1,28 +1,31 @@
 .header{
     position: sticky;
     top: 0;
-    background-color: #fff;
     z-index: 100;
     contain: layout;
     padding: 2rem;
     display: flex;
     justify-content: flex-end;
-
+    
 }
 .logo{
-    display: inline-flex;
+    display: flex;
     text-align: left;
-    justify-content: flex-start;
-    margin-right: 4rem;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #fafafa;
     align-items: center;
+    align-content: center;
     &_image{
-    height: 4rem;
+    height: 6rem;
     margin-right: .5rem;
     }
     &_text{
-       text-indent: 1px;
+        letter-spacing: .1rem;
+       text-indent: .3rem;
+       
         // text-transform: uppercase;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 }
 .main{
@@ -53,14 +56,10 @@
     .personalDetails{
         align-self: center;
         margin: 2rem 0;
-
-        &_labels{
-            font-size: 1.2rem;
-            color: grey;
-            opacity: 0;
-        }
+       
         &_input,
         &_input:focus{
+            border-radius: 0;
             display: block;
             font-size: inherit;
             padding: .8rem 0;
@@ -72,12 +71,13 @@
             border-bottom: 1px solid #353432;
             outline: none;
             margin-bottom: 3rem;
+            background-color: #fafafa;
             @include respond(tabletP){
                 margin-left: 3rem;
                 width: 80%;
             }
             &::placeholder{
-                font-size: 1.3rem;
+                font-size: 1.6rem;
                 opacity: 1;
             }
         }
@@ -101,6 +101,7 @@
         }
         }
         &_calendar{
+            appearance: none;
             display: block;
             font-size: inherit;
             padding: .8rem 0;
@@ -112,11 +113,12 @@
             border-bottom: 1px solid #353432;
             outline: none;
             margin-bottom: 3rem;
+            background-color: #fafafa;
             @include respond(tabletP){
                 width: 90%;
             }
             &::placeholder{
-                font-size: 1.2rem;
+                font-size: 1.6rem;
             }
         }
         &_time{
@@ -132,7 +134,7 @@
         }
         input:checked + .choice_time{
             color: rgb(236, 234, 234);
-            background-color: #004CFF;
+            background-color: #3b76ff;
             box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.315);
         }
         //hair
@@ -141,7 +143,7 @@
             // width: 90vw;
             clear: both;
             margin-bottom: 2rem;
-            font-size: 1.3rem;
+            font-size: 1.6rem;
             @include respond(tabletL){
                 width: 90%;
             }
@@ -151,7 +153,7 @@
         }
         .input_hair:checked + .label_hair{
             color: rgb(236, 234, 234);
-            background-color: #004CFF;
+            background-color: #3b76ff;
             box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.315);
         }
         .label_hair{
@@ -164,4 +166,9 @@
         }
     }
 }
+ .hair_length:disabled + .label_hair{
+    background-color: #cfcfcf;
+    box-shadow: none;
+    color: #adadad;
+ }
 

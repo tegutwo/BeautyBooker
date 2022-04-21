@@ -1,0 +1,47 @@
+#payment {
+    padding: 5rem;
+    height: 92vh;
+    display: none;
+    flex-direction: column;
+    // justify-content: center;
+    .heading{
+        color: #28C93E;
+    }
+    .payment{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        margin: auto 0;
+        width: 100%;
+
+        input{
+            font: inherit;
+            font-size: 1.6rem;
+            &:not(:last-child){
+                margin-bottom: .5rem;
+            }
+            letter-spacing: 1px;
+            border: 1px solid #363636;
+            border-radius: .2rem;
+            appearance: none;
+            padding: 1.5rem 1.3rem;
+            width: 80%;
+            @include respond(tabletP){
+                width: 40%;
+            }
+            @include respond(tabletL){
+                width: 30%;
+            }
+            &:last-child{
+                border: none;
+                color: #fefefe;
+                font-size: 2rem;
+                background-image: linear-gradient(to bottom right,#28C93E,#1F9E31);
+            }
+        }
+    }
+    p{
+        font-size: 2rem;
+    }
+}

@@ -2,18 +2,20 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="Icons/font/icon-font.css">
     <link rel="stylesheet" type="text/css" href="public/style/style.css">
-    
+    <link rel="shortcut icon" type="image/png" href="public/images/logo.png"> 
     <title>Tegutwo Culture: Booking</title>
 </head>
 <body>
+    <div class="logo">
+        <img src="public/images/logo.png" alt="Tegutwo culture logo image" srcset="" class="logo_image">
+        <p class="logo_text">Hair & Beauty</p>
+    </div>
     <div class="header">
-        <div class="logo">
-            <img src="public/images/logo.png" alt="Tegutwo culture logo image" srcset="" class="logo_image">
-            <p class="logo_text">Tegutwo </br>Culture</p>
-        </div>
         <div class="navigation">
             <input type="checkbox" name="menu" id="menu" class="navigation_checkbox">
             <label for="menu" class="navigation_button">
@@ -32,16 +34,14 @@
         </div>
     </div>
     <main class="main">
-        <form action="app.js" method="post" class="Details">
+        <form class="Details">
             <div class="container">
                 <h2 class="heading-primary">Your Details:</h2>
             <div class="personalDetails">
-            <label for="Name" class="personalDetails_labels">Name:</label>
-            <input type="text" name="Name" id="Name" class="personalDetails_input personalDetails_name" placeholder="Name" required invalid>
-            <label for="number" class="personalDetails_labels">Phone Number</label>
-            <input type="tel" name="number" id="number" class="personalDetails_input personalDetails_number" placeholder="Phone Number" required>
-            <label for="location" class="personalDetails_labels">Location:</label>
-            <input type="text" name="location" id="location" class="personalDetails_input personalDetails_location" placeholder="Location" required>
+            <input type="text" name="Name" id="Name" class="personalDetails_input personalDetails_name" placeholder="Name" required autofocus>
+            <input type="tel" name="number" id="number" class="personalDetails_input personalDetails_number" placeholder="Phone Number" required size="17" minlength="9" maxlength="17" pattern = "^(?:\+?(\d{1,3}))?[ ]?(?:\d{3,4})?[- ]?(?:\d{3,3})?[- ]?(?:\d{3,3})"
+            title='Formats are: +254********** +254 ****-***-*** +254 ***-***-*** 0*********'>
+            <input type="text" name="location" id="location" class="personalDetails_input personalDetails_location" placeholder="Location" autocomplete="off" required>
             <p class="personalDetails_text">We currently only operate within Nairobi.</p>
             </div>
             
@@ -51,7 +51,7 @@
                 <h2 class="heading-primary">Pick a date:</h2>
                 <div class="choice_date">
                     <div class="container" style="position: relative;">
-                        <input type="text" name="calendar" id="calendar_input" class="choice_calendar" placeholder="Choose a date" readonly required>
+                        <input type="text" name="calendar" id="calendar_input" class="choice_calendar" placeholder="Choose a date" autocomplete="off" required>
                         <label for="calendar_input" class="calendar_pop"><span class="icon-basic-calendar" style="font-size: 1.6rem;"></span></label>
                     </div>
                     <div id="calendar" class="hidden">
@@ -78,31 +78,91 @@
                     <label for="Afternoon" class="choice_time afternoon">Afternoon</label>
                     </div>
                 </div>
+                <div class="container" style="height: 1lt rem;"></div>
                 <h2 class="heading-primary">What Hair would you like?</h2>
                 <div class="choice_hair">
-                    <input type="radio" name="hair" id="FauxLocs" class="input_hair" value="Faux Locs" checked>
+                    <input type="radio" name="hair" id="FauxLocs" class="input_hair hair_type" value="Faux Locs" checked>
                     <label for="FauxLocs" class="label_hair">Faux Locs</label>
-                    <input type="radio" name="hair" id="BohoLocs" class="input_hair" value="Boho Locs">
+                    <input type="radio" name="hair" id="BohoLocs" class="input_hair hair_type" value="Boho Locs" >
                     <label for="BohoLocs" class="label_hair">Boho Locs</label>
-                    <input type="radio" name="hair" id="MermaidLocs" class="input_hair" value="Mermaid Locs">
+                    <input type="radio" name="hair" id="MermaidLocs" class="input_hair hair_type" value="Mermaid Locs">
                     <label for="MermaidLocs" class="label_hair">Mermaid Locs</label>
-                    <input type="radio" name="hair" id="DistressedLocs" class="input_hair" value="Distressed Locs">
+                    <input type="radio" name="hair" id="DistressedLocs" class="input_hair hair_type" value="Distressed Locs">
                     <label for="DistressedLocs" class="label_hair">Distressed Locs</label>
-                    <input type="radio" name="hair" id="KinkyWavy" class="input_hair" value="Kinky Wavy">
+                    <input type="radio" name="hair" id="KinkyWavy" class="input_hair hair_type" value="Kinky Wavy">
                     <label for="KinkyWavy" class="label_hair">Kinky Wavy</label>
-                    <input type="radio" name="hair" id="GypsyGoddess" class="input_hair" value="Gypsy Goddess">
+                    <input type="radio" name="hair" id="GypsyGoddess" class="input_hair hair_type" value="Gypsy Goddess">
                     <label for="GypsyGoddess" class="label_hair">Gypsy Goddess</label>
                 </div>
                 <a href="https://www.instagram.com/tegutwo_culture/" class="btn btn_text">Not sure?See all!</a>
+                    <h2 class="heading-primary" >Choose your hair length:</h2>
+                    <div class="choice_hair margin_bottom-medium">
+                        <input type="radio" name="hair_length" id="hair_short" class="input_hair hair_length" value="Bob/Short" checked>
+                        <label for="hair_short" class="label_hair">Bob/Short</label>
+                        <input type="radio" name="hair_length" id="hair_midBack" class="input_hair hair_length" value="Mid-Back">
+                        <label for="hair_midBack" class="label_hair">Mid-Back</label>
+                        <input type="radio" name="hair_length" id="hair_long" class="input_hair hair_length" value="Long">
+                        <label for="hair_long" class="label_hair">Long</label>
+                    </div>
             </div>
-            <input type="button" value="Book" class="btn btn_block" id="submit">
+            <input type="submit" value="Book" class="btn btn_block" id="submit">
+    
         </div>
        
     </form>
-    
+    <div id="payment">
+    <h2 class="heading heading_secondary">PAYMENT</h2>
+    <h1 class="heading heading_primary">M-PESA</h1>
+    <form class="payment">
+        <input type="tel" name="pesa_number" id="pesa_number" placeholder="2547********"  pattern = "^((\d{1,2}))?[ ]?(?:\d{3,4})?(?:\d{3,3})?(?:\d{3,3})" required>
+        <input type="submit" value="SEND">
+    </form>
+    <p>
+        Account Name: Tegutwo Culture
+    </p>
+    </div>
     </main>
 
 </body>
+<footer>
+    <div class="container" style="flex:1;">
+        <h1>
+           Hair & Beauty
+        </h1>
+        <div class="container" style ="height: 1rem;"></div>
+        <p class="description" >
+            Booking site linked to Firebase for booking using adaptable calendar
+            Created By Alvin Tegutwo WEB DEV & DESIGN
+        </p>
+    </div>
+    <div class="container" style="flex:2;" >
+        <h1 class="Logo_text">Our Socials:</h1>
+        <div class="container" style ="height: 1rem;"></div>
+        <div class="container">
+            <div class="social social_1" >
+                <a href=# class="social_links">
+                    <div class="social_logo">
+                        <img src="public/images/insta.png" alt="Instagram" srcset="" style="width: 4rem;">
+                    </div>
+                    <div class="container" style="width: 1rem;"></div>
+                    <p class="text" style="line-height: 4rem;">Instagram:  @hair&beauty</p>
+                </a>
+            </div>
+            <div class="container" style ="height: .5rem;"></div>
+            <div class="social social_1">
+                <a href=# class="social_links">
+                    <div class="social_logo">
+                        <img src="public/images/mail.png" alt="E-mail" srcset="" style="width: 4rem;">
+                    </div>
+                    <div class="container" style="width: 1rem;"></div>
+                    <p class="text" style="line-height: 4rem;">Email:  hair&beauty@gmail.com</p>
+                </a>
+            </div>
+        </div>
+        
+
+    </div>
+</footer>
 <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>

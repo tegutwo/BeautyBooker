@@ -14,9 +14,22 @@
     color:white;
     border-radius:50%;
 }
-.errors{
+ul[class ^= "errors"]{
+    text-align: left;
     color: red;
     padding: 1.5rem;
     text-indent: .3rem;
-    list-style: square ;
+    list-style: none;
+    & > *{
+        text-align: center;
+    }
+}
+.paddingSmallVertical{
+    padding: 1rem auto;
+}
+.marginSmallVertical{
+    margin: 1rem auto;
+}
+.margin_bottom--medium{
+    margin-bottom: 1.5rem;
 }
